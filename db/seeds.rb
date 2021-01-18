@@ -29,3 +29,5 @@ Schedule.create(description: 'Lunes a Viernes entre 10:00 y 22:00', place_id: 6)
 Schedule.create(description: 'Todos los días entre 10:00 y 20:00', place_id: 7)
 Schedule.create(description: 'Todos los días entre 10:00 y 22:00, con inscripción', place_id: 8)
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+User.create!(email: 'admin@test.com', password: '123qwe', password_confirmation: '123qwe', admin:true)

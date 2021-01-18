@@ -1,27 +1,87 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sports</h1>
+<% if current_user.present? %>
+
+<h2> ¡Bienvenido <%= current_user.email %>! </h2>
+
+
+<div class="container my-3">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://t4.ftcdn.net/jpg/02/19/79/57/360_F_219795787_VhDmEIYQH1vRSB9fLZePgMALWYAebRBx.jpg" class="d-block w-100 fixed-height" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="background-color:powderblue;">Vamos A La Cancha</h5>
+        <p style="background-color:tomato;">¡Encuentra esa cancha que tanto buscas!</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://cl.habcdn.com/photos/quotation/gallery/piscina-olimpica-san-borja-03-144495.jpg" class="d-block w-100 fixed-height" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="background-color:powderblue;">Vamos A La Piscina También</h5>
+        <p style="background-color:tomato;">¡Lánzate un piquero a buscar tu nueva piscina!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="background-color:powderblue;">Third slide label</h5>
+        <p style="background-color:tomato;">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+</div>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sports.each do |sport| %>
-      <tr>
-        <td><%= sport.name %></td>
-        <td><%= link_to 'Show', sport %></td>
-        <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
-        <td><%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <h1 class="text-center my-5">Deportes</h1>
+    <div class="row my-5">
+      <% @sports.each do |sport| %>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+              <div class="caption text-center text-justify">
+              <h3> <%= sport.name %></h3>
+              <%= link_to 'Ver Deporte', places_path, class: "btn btn-warning"  %>
+              <%= link_to 'Edit', edit_sport_path(sport), class: "btn btn-warning" %>
+              <%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>             
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+
 </table>
 
 <br>
 
 <%= link_to 'New Sport', new_sport_path %>
+
+<% else %>
+  <table>
+      <th>
+        <h2>Ala Canchapp </h2>
+        <h4>Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
+        y sobre todo para ayudar a personas que quieran iniciar en el mundo de algún deporte, 
+        aquí encontrarán toda la información necesaria para poder ir a practicar. 
+        Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
+        no sabía donde ni cuando se jugaba. Busqué por internet para encontrar canchas o grupos de basquetbolistas, 
+        pero no había nada. Y como yo, son muchos los que se encuentran con este problema a diario. 
+        Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir a la cancha.</h4>
+      </th>
+  </table>
+<% end %>
+
