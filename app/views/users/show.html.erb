@@ -23,5 +23,10 @@
     <% end %>
 </tbody>
 </table>
-    
+
+<th> Eventos creados esta semana </th>
+<%= column_chart Event.group_by_day_of_week(:created_at, format: "%a").count %>
+<th> Lugares para ir </th>
+<%= pie_chart Place.group(:name).count %>
+
 <% end %>

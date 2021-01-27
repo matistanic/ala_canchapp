@@ -32,6 +32,10 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'activeadmin'
 gem 'cancancan'
+gem "omniauth", "~> 1.9.1" # Can not move to 2.0 because of devise - https://github.com/heartcombo/devise/pull/5327
+gem 'omniauth-facebook'
+gem 'chartkick'
+gem 'groupdate'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
