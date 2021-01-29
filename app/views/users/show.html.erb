@@ -26,7 +26,12 @@
 
 <th> Eventos creados esta semana </th>
 <%= column_chart Event.group_by_day_of_week(:created_at, format: "%a").count %>
-<th> Lugares para ir </th>
-<%= pie_chart Place.group(:name).count %>
+<th> Lugares disponibles según deporte </th>
+<%= pie_chart Place.group(:sport_id).count %>
+
+<% else %>
+<h1> ¡Ve a crear tu primer evento! </h1>
+
+<%= link_to 'Eventos', new_event_path %>
 
 <% end %>

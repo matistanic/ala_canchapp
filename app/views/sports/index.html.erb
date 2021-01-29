@@ -46,6 +46,8 @@
 </div>
 </div>
 
+<%= link_to 'Eventos', events_path, class: "btn btn-primary col-md-1" %>
+
 <table>
 
   <h1 class="text-center my-5">Deportes</h1>
@@ -73,14 +75,16 @@
 <% else %>
   <table>
       <th>
-        <h2>Ala Canchapp </h2>
-        <h4>Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
+        <h1 style="text-align: center; color:red;">Ala Canchapp </h1>
+        <h3 style="text-align: center; color:blue;">Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
         y sobre todo para ayudar a personas que quieran iniciar en el mundo de algún deporte, 
-        aquí encontrarán toda la información necesaria para poder ir a practicar. 
-        Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
+        aquí encontrarán toda la información necesaria para poder ir a practicar.</h3>
+        <br>
+        <h4 style="text-align: center; color:blue;">Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
         no sabía donde ni cuando se jugaba. Busqué por internet para encontrar canchas o grupos de basquetbolistas, 
-        pero no había nada. Y como yo, son muchos los que se encuentran con este problema a diario. 
-        Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir a la cancha.</h4>
+        pero no había nada. Y como yo, son muchos los que se encuentran con este problema a diario. </h4>
+        <br>
+        <h4 style ="text-align: center; color:green;">Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir A la Cancha.</h4>
       </th>
   </table>
 <% end %>
