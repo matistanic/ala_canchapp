@@ -5,5 +5,11 @@
   <%= @schedule.description %>
 </p>
 
+
+<p>
+  <strong>Lugar:</strong>
+  <%= Place.find_by({:id => @schedule.place_id}).name %>
+</p>
+
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>

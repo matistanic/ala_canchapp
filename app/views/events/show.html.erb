@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Evento:</strong>
   <%= @event.title %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>Descripción:</strong>
   <%= @event.comment %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
+  <strong>Email de contacto:</strong>
+  <%= User.find_by({:id => @event.user_id}).email %>
 </p>
 
 <% if can? :update, @event %><%= link_to 'Edit', edit_event_path(@event) %> | <% end %>

@@ -7,11 +7,6 @@
 
 <div class="container my-3">
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
-    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
-    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
-  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
       <img src="https://t4.ftcdn.net/jpg/02/19/79/57/360_F_219795787_VhDmEIYQH1vRSB9fLZePgMALWYAebRBx.jpg" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
@@ -35,57 +30,76 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </a>
 </div>
 </div>
 
-<%= link_to 'Eventos', events_path, class: "btn btn-primary col-md-1" %>
-
-<table>
-
-  <h1 class="text-center my-5">Deportes</h1>
-    <div class="row my-5">
-      <% @sports.each do |sport| %>
-        <div class="col-sm-4">
-          <div class="thumbnail">
-              <div class="caption text-center text-justify">
-              <h3> <%= sport.name %></h3>
-              <%= link_to 'Ver Deporte', places_path, class: "btn btn-warning"  %>
-              <%= link_to 'Edit', edit_sport_path(sport), class: "btn btn-warning" %>
-              <%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>             
-              </div>
-            </div>
-          </div>
-        <% end %>
+<br>
+<div class="container mx-auto d-flex my-4">
+  <div class="border-bottom w-100"></div>
+</div>
+<br>
+<section class="container d-md-block" style="background-color: blanchedalmond;">
+<div class="">
+  <h1 class="text-center my-5">ALACANCHAPP</h1>
+  <div class="row">
+    <div class="col-lg-5">
+      <img  class="w-100 mb-4 border border-md border-white shadow-sm" src="<%= asset_path 'cancha.jpg' %>">
     </div>
+    <div class="col-lg-7">
 
-</table>
+      <h4 class=" text-justify"> AlaCanchapp es una app creada con la inteción de conectar tanto a los deportistas, como a los que quieren empezar.</h4>
+      <br>
+      <h4 class=" text-justify"> Aquí encontrarás diferentes deportes, donde podrás buscar lugares para practicarlos y también en los horarios que se practican.</h4>
+      <br>
+      <h4 class=" text-justify"> En la sección eventos podrás interactuar con otros usuarios, para armar equipos o campeonatos (en los detalles del evento, se publicará tu email para que te puedan contactar).</h4>
+      <br>
+      <h4 class=" text-justify "> ¡Qué esas ganas de partir o volver a un  deporte no quede en las puras ganas! </h4>
+      <br>
+      <h4 class=" text-justify "> A los cabros les falta uno para el 3 contra 3 ¿les vas a decir que no? </h5>
+    </div>
+  </div>
+</div>
+</section>
+<br>
+<section>
+<h1 class="text-center my-5">Ve a ver los distintos eventos</h1>
+  <div style="text-align: center;">
+  <%= link_to 'Eventos', events_path, class: "button" %>
+  </div>
+  <table>
+    <tbody>
+    <h1 class="text-center my-5">Deportes</h1>
+        <% @sports.each do |sport| %>
+              <tr>
+                <td><h1><%= sport.name %></h1></td>
+                <td><%= link_to 'Ver Deportes', places_path, class: "button"  %></td>
+                <td><% if can? :update, sport %><%= link_to 'Editar', edit_sport_path(sport), class: "button" %><% end %></td>
+                <td><% if can? :destroy, sport %><%= link_to 'Eliminar', sport, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
+              </tr>             
+        <% end %>
+    </tbody>
+  </table>
 
 <br>
 
-<%= link_to 'New Sport', new_sport_path %>
-
+  <td><% if can? :manage, @sports %><%= link_to 'Nuevo Deporte', new_sport_path, class: "btn btn-warning my-5" %><% end %></td>
+</section>
 <% else %>
-  <table>
+  <body class="not-logged">
+    <table>
       <th>
         <h1 style="text-align: center; color:red;">Ala Canchapp </h1>
-        <h3 style="text-align: center; color:blue;">Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
+        <h3 style="text-align: center; color:black;">Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
         y sobre todo para ayudar a personas que quieran iniciar en el mundo de algún deporte, 
         aquí encontrarán toda la información necesaria para poder ir a practicar.</h3>
         <br>
-        <h4 style="text-align: center; color:blue;">Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
+        <h4 style="text-align: center; color:black;">Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
         no sabía donde ni cuando se jugaba. Busqué por internet para encontrar canchas o grupos de basquetbolistas, 
         pero no había nada. Y como yo, son muchos los que se encuentran con este problema a diario. </h4>
         <br>
-        <h4 style ="text-align: center; color:green;">Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir A la Cancha.</h4>
+        <h3 style ="text-align: center; color:white;">Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir A la Cancha.</h3>
       </th>
-  </table>
+    </table>
+  </body>
 <% end %>
 

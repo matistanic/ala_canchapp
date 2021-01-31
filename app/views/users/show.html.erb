@@ -1,33 +1,33 @@
 <% if @events.present? %>
 
 <table>
-<thead>
+  <thead>
     <tr>
-        <th>Title</th>
-        <th>Comment</th>
-        <th>User</th>
-        <th colspan="3"></th>
+      <th style="background-color: #ffc107;">Evento</th>
+      <th style="background-color: #ffc107;">Descripción</th>
+      <th style="background-color: #ffc107;">Usuario</th>
+      <th style="background-color: #ffc107;" colspan="3"></th>
     </tr>
-</thead>
+  </thead>
 
-<tbody>
+  <tbody>
     <% @events.each do |event| %>
-        <tr>
-            <td><%= event.title %></td>
-            <td><%= event.comment %></td>
-            <td><%= event.user_id %></td>
-            <td><%= link_to 'Show', event %></td>
-            <td><% if can? :update, event %><%= link_to 'Edit', edit_event_path(event) %><% end %></td>
-            <td><% if can? :destroy, event %><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
-        </tr>
+      <tr>
+        <td><h4><%= event.title %></h4></td>
+        <td><h4><%= event.comment %></h4></td>
+        <td><%= link_to 'Detalles', event, class: "button" %></td>
+        <td><% if can? :update, event %><%= link_to 'Editar', edit_event_path(event), class: "button" %><% end %></td>
+        <td><% if can? :destroy, event %><%= link_to 'Eliminar', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
+      </tr>
     <% end %>
-</tbody>
+  </tbody>
 </table>
 
-<th> Eventos creados esta semana </th>
+<th><h2> Eventos creados esta semana </h2></th>
 <%= column_chart Event.group_by_day_of_week(:created_at, format: "%a").count %>
-<th> Lugares disponibles según deporte </th>
+<th><h2> Lugares disponibles según deporte </h2></th>
 <%= pie_chart Place.group(:sport_id).count %>
+
 
 <% else %>
 <h1> ¡Ve a crear tu primer evento! </h1>

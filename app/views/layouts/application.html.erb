@@ -20,29 +20,30 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <% if current_user.present? %>
         <li class="nav-item nav-link">
-          <%=link_to 'My account', edit_user_registration_path %>
+          <%=link_to 'Editar Mi Cuenta', edit_user_registration_path %>
         </li>
         <li class="nav-item nav-link">
-          <%= link_to "Mis eventos", current_user %>
+          <%= link_to "Mis Eventos", current_user %>
         </li>
         <li class="nav-item nav-link">
-          <%=link_to 'Log out', destroy_user_session_path, :method => :delete %>
+          <%=link_to 'Cerrar Sesión', destroy_user_session_path, :method => :delete %>
         </li>
       <% else %>
         <li class="nav-item nav-link">
-        <%=link_to 'Log in', new_user_session_path %>
+        <%=link_to 'Iniciar Sesión', new_user_session_path %>
         </li>
         <li class="nav-item nav-link">
-        <%=link_to 'Sign in', new_user_registration_path %>
+        <%=link_to 'Registrarse', new_user_registration_path %>
         </li>
         <li class="nav-item nav-link">
-        <%= link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path %>
+        <%= link_to 'Registrarse Con Facebook', user_facebook_omniauth_authorize_path %>
         </li>
       <% end %>
     </div>
   </div>
 </nav>
-
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>

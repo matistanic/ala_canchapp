@@ -14,3 +14,40 @@
  *= require_self
  */
  @import "bootstrap";
+
+ h1{
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+  }
+
+ h2{
+     font-family: 'Yanone Kaffeesatz', sans-serif;
+     font-weight: 700;
+     font-size: 3rem;
+ }
+
+ h3{
+     font-family: 'Yanone Kaffeesatz', sans-serif;
+     font-weight: 600;
+ }
+ h4{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+  }
+  h5{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+  }
+  h6{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+  }
+
+  .not-logged{
+    background-image: url(slamdunk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  table tr th {
+    border-top:1px solid #000000
+  }
