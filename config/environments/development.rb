@@ -34,11 +34,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-  api_key: 'fdbf60934c452d6848a14dcb765a3c3f-07bc7b05-43788e62',
-  domain: 'alacanchapp.tk',
-  }
 
 
   # Print deprecation notices to the Rails logger.

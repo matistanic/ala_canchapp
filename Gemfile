@@ -36,7 +36,6 @@ gem "omniauth", "~> 1.9.1" # Can not move to 2.0 because of devise - https://git
 gem 'omniauth-facebook'
 gem 'chartkick'
 gem 'groupdate'
-gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
