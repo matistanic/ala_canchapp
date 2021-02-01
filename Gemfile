@@ -37,7 +37,6 @@ gem 'omniauth-facebook'
 gem 'chartkick'
 gem 'groupdate'
 gem 'rollbar'
-gem 'sib-api-v3-sdk'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
