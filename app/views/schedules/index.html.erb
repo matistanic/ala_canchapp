@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th style="background-color: #ffc107;">Descripción</th>
+      <th style="background-color: #ffc107;">Lugar</th>
       <th style="background-color: #ffc107;" colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +14,9 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= schedule.description %></td>
-        <td><%= Place.find_by({:id => schedule.place_id}).name %></td>
-        <td><%= link_to 'Ver Detalles', schedule, class: "button" %></td>
+        <td><h4><%= schedule.description %></h4></td>
+        <td><h4><%= Place.find_by({:id => schedule.place_id}).name %></h4></td>
+        <td><% if can? :manage, schedule %><%= link_to 'Ver Detalles', schedule, class: "button" %><% end %></td>
         <td><% if can? :update, schedule %><%= link_to 'Editar', edit_schedule_path(schedule), class: "button" %><% end %></td>
         <td><% if can? :destroy, schedule %><%= link_to 'Eliminar', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
       </tr>

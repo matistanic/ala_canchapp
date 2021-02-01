@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lugares</h1>
+<h1 class="text-center my-5">Lugares</h1>
 
 <table>
   <thead>
@@ -16,12 +16,15 @@
       <tr>
         <td><%= place.name %></td>
         <td><%= place.address %></td>
-        <td><%= link_to 'Horarios', schedules_path, class: "button" %></td>
+        <td><%= place.sport.name %></td>        
         <td><% if can? :update, place %><%= link_to 'Editar', edit_place_path(place), class: "button" %><% end %></td>
         <td><% if can? :destroy, place %><%= link_to 'Eliminar', place, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
       </tr>
-    <% end %>
-  </tbody>
+        <% end %>
+        <div style="text-align: center;">
+          <%= link_to 'Horarios', schedules_path, class: "button my-3" %>
+        </div>
+        </tbody>
 </table>
 
 <br>

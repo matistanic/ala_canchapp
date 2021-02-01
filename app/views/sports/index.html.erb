@@ -71,18 +71,20 @@
     <h1 class="text-center my-5">Deportes</h1>
         <% @sports.each do |sport| %>
               <tr>
-                <td><h1><%= sport.name %></h1></td>
-                <td><%= link_to 'Ver Deportes', places_path, class: "button"  %></td>
+                <td><% if can? :manage, @sports %><h1><%= sport.name %></h1><% end %></td>
                 <td><% if can? :update, sport %><%= link_to 'Editar', edit_sport_path(sport), class: "button" %><% end %></td>
                 <td><% if can? :destroy, sport %><%= link_to 'Eliminar', sport, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
               </tr>             
         <% end %>
+        <div style="text-align: center;">
+          <%= link_to 'Ver Deportes', places_path, class: "button my-4" %>
+        </div>
     </tbody>
   </table>
 
 <br>
 
-  <td><% if can? :manage, @sports %><%= link_to 'Nuevo Deporte', new_sport_path, class: "button" %><% end %></td>
+  <td><% if can? :manage, @sports %><%= link_to 'Nuevo Deporte', new_sport_path, class: "button my-4" %><% end %></td>
 </section>
 <% else %>
   <body class="not-logged">

@@ -36,6 +36,8 @@ gem "omniauth", "~> 1.9.1" # Can not move to 2.0 because of devise - https://git
 gem 'omniauth-facebook'
 gem 'chartkick'
 gem 'groupdate'
+gem 'rollbar'
+gem 'sib-api-v3-sdk'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

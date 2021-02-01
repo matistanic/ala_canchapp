@@ -10,9 +10,10 @@
   <%= @event.comment %>
 </p>
 
+
 <p>
   <strong>Email de contacto:</strong>
-  <%= User.find_by({:id => @event.user_id}).email %>
+  <%= @event.user.email %>
 </p>
 
 <% if can? :update, @event %><%= link_to 'Edit', edit_event_path(@event) %> | <% end %>
