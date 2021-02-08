@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center my-5">Lugares</h1>
+<h1 class="text-center my-5" style="color:#ffc107;">Lugares</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th style="background-color: #ffc107;">Nombre</th>
-      <th style="background-color: #ffc107;">Dirección</th>
-      <th style="background-color: #ffc107;" colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
+<body class="places-body">
+  <table background="<%= asset_path 'tablalugares.jpg' %>">
+    <thead>
       <tr>
-        <td><%= place.name %></td>
-        <td><%= place.address %></td>
-        <td><%= place.sport.name %></td>        
-        <td><% if can? :update, place %><%= link_to 'Editar', edit_place_path(place), class: "button" %><% end %></td>
-        <td><% if can? :destroy, place %><%= link_to 'Eliminar', place, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
+        <th style="background-color: #ffc107;">Nombre</th>
+        <th style="background-color: #ffc107;">Dirección</th>
+        <th style="background-color: #ffc107;" colspan="3"></th>
       </tr>
-        <% end %>
-        <div style="text-align: center;">
-          <%= link_to 'Horarios', schedules_path, class: "button my-3" %>
-        </div>
-        </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @places.each do |place| %>
+        <tr>
+          <td><%= place.name %></td>
+          <td><%= place.address %></td>
+          <td><%= place.sport.name %></td>        
+          <td><% if can? :update, place %><%= link_to 'Editar', edit_place_path(place), class: "button" %><% end %></td>
+          <td><% if can? :destroy, place %><%= link_to 'Eliminar', place, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %><% end %></td>
+        </tr>
+          <% end %>
+          <div style="text-align: center;">
+            <%= link_to 'Horarios', schedules_path, class: "button my-3" %>
+          </div>
+          </tbody>
+  </table>
+</body>
 
 <br>
 

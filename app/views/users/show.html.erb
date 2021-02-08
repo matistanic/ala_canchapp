@@ -25,8 +25,8 @@
 
 <th><h2> Eventos creados esta semana </h2></th>
 <%= column_chart Event.group_by_day_of_week(:created_at, format: "%a").count %>
-<th><h2> Lugares disponibles según deporte </h2></th>
-<%= pie_chart Place.group(:sport_id).count %>
+<th><h2> Horarios disponibles según lugar </h2></th>
+<%= pie_chart Schedule.joins(:place).group(:name).count %>
 
 
 <% else %>

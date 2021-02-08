@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descripción %>
     <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lugar %>
+    <%= form.select :place_id, Place.all.collect {|c| [c.name, c.id]}, {} ,id: :schedule_place_id, include_blank:false %>
   </div>
 
   <div class="actions">

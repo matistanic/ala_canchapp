@@ -9,21 +9,21 @@
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://t4.ftcdn.net/jpg/02/19/79/57/360_F_219795787_VhDmEIYQH1vRSB9fLZePgMALWYAebRBx.jpg" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
+      <img src="<%= asset_path 'inesdesuarez.jpg' %>" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style="background-color:powderblue;">Vamos A La Cancha</h5>
         <p style="background-color:tomato;">¡Encuentra esa cancha que tanto buscas!</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://cl.habcdn.com/photos/quotation/gallery/piscina-olimpica-san-borja-03-144495.jpg" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
+      <img src="<%= asset_path 'estadionacional.jpg' %>" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style="background-color:powderblue;">Vamos A La Piscina También</h5>
         <p style="background-color:tomato;">¡Lánzate un piquero a buscar tu nueva piscina!</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBsrWC1-HFJPdADVsmRveciAcpFi8WLb7I_A&usqp=CAU&ec=45761791" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
+      <img src="<%= asset_path 'loscancheros.jpg' %>" class="d-block w-100 fixed-height" style="height:500px;" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style="background-color:powderblue;">Y tú, ¿te atreves a patearlo?</h5>
         <p style="background-color:tomato;">No dejes a otros lanzar tu penal</p>
@@ -38,7 +38,7 @@
   <div class="border-bottom w-100"></div>
 </div>
 <br>
-<section class="container d-md-block" style="background-color: blanchedalmond;">
+<section class="container d-md-block" style="background-color: #ffc107;">
 <div class="">
   <h1 class="text-center my-5">ALACANCHAPP</h1>
   <div class="row">
@@ -47,7 +47,7 @@
     </div>
     <div class="col-lg-7">
 
-      <h4 class=" text-justify"> AlaCanchapp es una app creada con la inteción de conectar tanto a los deportistas, como a los que quieren empezar.</h4>
+      <h4 class=" text-justify"> AlaCanchapp es una app creada con la intención de conectar tanto a los deportistas, como a los que quieren empezar.</h4>
       <br>
       <h4 class=" text-justify"> Aquí encontrarás diferentes deportes, donde podrás buscar lugares para practicarlos y también en los horarios que se practican.</h4>
       <br>
@@ -88,20 +88,20 @@
 </section>
 <% else %>
   <body class="not-logged">
+  <div class="container col-6" style="float: right;">
     <table>
       <th>
-        <h1 style="text-align: center; color:red;">Ala Canchapp </h1>
-        <h3 style="text-align: center; color:black;">Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, 
-        y sobre todo para ayudar a personas que quieran iniciar en el mundo de algún deporte, 
-        aquí encontrarán toda la información necesaria para poder ir a practicar.</h3>
+        <h1 style="text-align: right; color:red; padding-left: 30px;">Ala Canchapp </h1>
         <br>
-        <h4 style="text-align: center; color:black;">Esto nace por una experiencia personal, al intentar iniciar en el mundo del básquetbol me encontré con un enorme problema, 
-        no sabía donde ni cuando se jugaba. Busqué por internet para encontrar canchas o grupos de basquetbolistas, 
-        pero no había nada. Y como yo, son muchos los que se encuentran con este problema a diario. </h4>
+        <h3 style="text-align: right; color:black; padding-left: 50px;">Ala Canchapp es una aplicación web creada para ayudar a los 
+          deportistas a conectar entre ellos, y sobre todo para quienes tienen ganas de partir en algo nuevo.</h3>
         <br>
-        <h3 style ="text-align: center; color:white;">Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir A la Cancha.</h3>
+        <h3 style="text-align: right; color:black; padding-left: 30px;">Quizás eres el próximo Sakuragi, pero no aún lo has intentado. </h3>
+        <br>
+        <h3 style ="text-align: right; color:black; padding-left: 100px;">Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las ganas de ir A la Cancha.</h3>
       </th>
     </table>
+    </div>
   </body>
 <% end %>
 

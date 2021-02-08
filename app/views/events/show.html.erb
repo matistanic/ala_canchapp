@@ -16,5 +16,5 @@
   <%= @event.user.email %>
 </p>
 
-<% if can? :update, @event %><%= link_to 'Edit', edit_event_path(@event) %> | <% end %>
-<%= link_to 'Back', events_path %>
+<% if can? :update, @event %><%= link_to 'Editar', edit_event_path(@event) %> | <% end %>
+<%= link_to 'Atrás', events_path %>

@@ -51,3 +51,26 @@
   table tr th {
     border-top:1px solid #000000
   }
+  td{
+    width: 60%;
+    height: 40px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  .places-body{
+    background-image: image_url('lugares.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .schedules-body{
+    background-image: image_url('horarios.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .events-body{
+    background-image: image_url('eventos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
