@@ -1,4 +1,4 @@
-# README
+ # README
 # Ala Canchapp
 
 Ala Canchapp es una aplicación creada para ayudar a los distintos deportistas a conectarse con sus pares, y sobre todo para ayudar a personas que quieran iniciar en el mundo de algún deporte, aquí encontrarán toda la información necesaria para poder ir a practicar.
@@ -19,7 +19,8 @@ Aquí encontrarán la razón para que no hayan más excusas, y solo quedén las 
 Listo!
 
 ## Dominio
-* www.alacanchapp.tk
+* www.alacanchapp.tk (en proceso de recuperar)
+* https://floating-caverns-00060.herokuapp.com/ <- mientras
 
 ### Usuario Admin
 * email => admin@test.com
